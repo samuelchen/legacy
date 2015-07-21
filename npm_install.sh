@@ -1,3 +1,0 @@
-#!/binsh
-
-npm install

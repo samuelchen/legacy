@@ -1,10 +1,10 @@
-# Hexo Configuration
+#Hexo Configuration
 ## Docs: http://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Explorer. Dream. Discover.
-subtitle: My technical blog
+title: Legacy - Explorer. Dream. Discover.
+subtitle: 现在看起来有些还是蛮稚嫩的旧贴
 description:
 author: Samuel Chen
 language: zh-CN
@@ -12,8 +12,8 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.samuelchen.net
-root: /
+url: http://blog.samuelchen.net/legacy
+root: /legacy/
 #permalink: :year/:month/:day/:title/
 permalink: :title/
 permalink_defaults:
@@ -66,14 +66,14 @@ pagination_dir: page
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 #theme: landscape
-theme: tranquilpeak
+theme: minos
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
-deploy:
-  - type: git
-    repo: git@github.com:samuelchen/myblog.git
-    branch: gh-pages
+#deploy:
+#  - type: git
+#    repo: git@github.com:samuelchen/myblog.git
+#    branch: 
 
 
 # Feed
