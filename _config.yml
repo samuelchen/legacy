@@ -70,10 +70,10 @@ theme: minos
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
-#deploy:
-#  - type: git
-#    repo: git@github.com:samuelchen/myblog.git
-#    branch: 
+deploy:
+  - type: git
+    repo: git@github.com:samuelchen/legacy.git
+    branch: gh-pages
 
 
 # Feed
