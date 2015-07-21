@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&gt;HTML 5 Inside - 深入HTML 5 - Legacy - Explorer. Dream. Discover.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;gt;
+&amp;#160;
+
+本文基于 HTM5 标准草案 2009年8月25日版 以及 HTML5与HTML4的不同 2009年8月25日版 。转载请保留出处：http://SamuelChen.net  
+
+HTML 5 的概念始于2003年，在2004年初期行成其第一个只包括form相关的一些内容的草案，并于同年被提请加入到W3C以探讨互联网应用的未来。显然，这么初步的提案是要被拒的，不过这也引">
+<meta property="og:type" content="article">
+<meta property="og:title" content=">HTML 5 Inside - 深入HTML 5">
+<meta property="og:url" content="http://blog.samuelchen.net/legacy/html-5-inside/index.html">
+<meta property="og:site_name" content="Legacy - Explorer. Dream. Discover.">
+<meta property="og:description" content="&amp;gt;
+&amp;#160;
+
+本文基于 HTM5 标准草案 2009年8月25日版 以及 HTML5与HTML4的不同 2009年8月25日版 。转载请保留出处：http://SamuelChen.net  
+
+HTML 5 的概念始于2003年，在2004年初期行成其第一个只包括form相关的一些内容的草案，并于同年被提请加入到W3C以探讨互联网应用的未来。显然，这么初步的提案是要被拒的，不过这也引">
+<meta property="og:updated_time" content="2015-07-20T07:10:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=">HTML 5 Inside - 深入HTML 5">
+<meta name="twitter:description" content="&amp;gt;
+&amp;#160;
+
+本文基于 HTM5 标准草案 2009年8月25日版 以及 HTML5与HTML4的不同 2009年8月25日版 。转载请保留出处：http://SamuelChen.net  
+
+HTML 5 的概念始于2003年，在2004年初期行成其第一个只包括form相关的一些内容的草案，并于同年被提请加入到W3C以探讨互联网应用的未来。显然，这么初步的提案是要被拒的，不过这也引">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/legacy/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/legacy//webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/legacy/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/legacy/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/legacy/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/legacy/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/legacy/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.samuelchen.net/legacy"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-html-5-inside" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &gt;HTML 5 Inside - 深入HTML 5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/legacy/html-5-inside/" class="article-date">
+  <time datetime="2010-02-01T06:47:00.000Z" itemprop="datePublished">2010-02-01</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/legacy/categories/未分类/">未分类</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&gt;</p>
+<p>&#160;</p>
+<blockquote>
+<p>本文基于 <a href="http://www.w3.org/TR/2009/WD-html5-20090825/" title="W3C Working Draft 25 August 2009" target="_blank" rel="external">HTM5 标准草案 2009年8月25日版</a> 以及 <a href="http://www.w3.org/TR/2009/WD-html5-diff-20090825/" title="W3C Working Draft 25 August 2009" target="_blank" rel="external">HTML5与HTML4的不同 2009年8月25日版</a> 。<br>转载请保留出处：<a href="http://SamuelChen.net" target="_blank" rel="external">http://SamuelChen.net</a>  </p>
+</blockquote>
+<p>HTML 5 的概念始于2003年，在2004年初期行成其第一个只包括form相关的一些内容的草案，并于同年被提请加入到W3C以探讨互联网应用的未来。显然，这么初步的提案是要被拒的，不过这也引起了很多公司的关注。不久之后，Apple、Mozilla 以及 Opera 都声明愿意继续在这个提案的基础之上进行进一步的研究工作，并将该提案转移到了WHATWG，同时建立了一个正式的公共邮件列表用以讨论。 直到2006年，W3C 才表示了对该提案的兴趣，并于2007年建立专项工作组和WHATWG共同工作。至此，所有的工作组才共同合作发展HTML5。 </p>
+<p>有人说，HTML5是改变Web开发的新起点，它增加了如此多的让人期待的特性，使得富浏览器端应用不再让人头疼；而也有人说，HTML 5 是W3C 平衡商业利益向WHATWG低头的产物，只是对HTML4进行了些许改进，没有好的设计与规划，只是一个劲的往里塞特性，实质上是一种倒退。</p>
+<p>商业巨头们的战争，咱们小家寡民也甭咸吃罗卜淡操心，无论如何，HTML5是一个有着很大变化的新标准，其特性从实用层面上来看，也是非常不错的。</p>
+<p>HTML 5 草案形成有一段时间了，同时也有很多的浏览器支持了，很多特性基本上已经定型，更多的只是在细节上变化。因此，在这儿更加详细和深入的研究它，并计划写一个系列记录及分享心得。</p>
+<p>名字就叫 html 5 inside 了，至于能不能真正做到 inside 咱慢慢来吧，学而时习之，边学边写。</p>
+<p>先来道开胃菜，大家看看这些应用和例子，相信能坚定大家看好HTML5的决心：</p>
+<ul>
+<li><a href="http://jilion.com/sublime/video" target="_blank" rel="external">基于 webkit 的 video player （其实webkit的内容和播放视频无关）</a><em>   <a href="http://www.phpguru.org/static/html5-canvas-examples" target="_blank" rel="external">HTML5 canvas examples</a> 这个里面有很多例子，还有很炫的游戏！</em>   <a href="http://paulirish.com/work/gordon/demos/" target="_blank" rel="external">厉害的来了！ HTML+JS+SVG 的 Flash runtime !</a>    </li>
+</ul>
+<p>索引 （可能会修改）</p>
+<ol>
+<li>HTML 5 Inside – Overview 总览2.  HTML 5 Inside – Interative 交互3.  HTML 5 Inside – Canvas 画布4.  HTML 5 Inside – Multi Media 多媒体5.  HTML 5 Inside – Map 地图6.  HTML 5 Inside – Local Storage/Offline Cache 本地存储/离线缓存7.  HTML 5 Inside – Web Socket 页面上的套接字8.  HTML 5 Inside – Work Thread 工作线程9.  HTML 5 Inside – Messaging 消息10.  HTML 5 Inside – Drag &amp; Drop 拖拽11.  HTML 5 Inside – Copy &amp; Paste 复制粘贴12.  HTML 5 Inside – Dialog, Progress UI增强13.  HTML 5 Inside – DOM 文档对象结构14.  HTML 5 Inside – DataGrid 数据表格  </li>
+</ol>
+<p>&#160;</p>
+<p>Resources:</p>
+<ul>
+<li><a href="http://diveintohtml5.org/" target="_blank" rel="external">Drive Into HTML 5</a> – Mark Filgrim<em>   <a href="http://lachy.id.au/" target="_blank" rel="external">Lachlan Hunt</a> – W3C member</em>   <a href="http://forabeautifulweb.com/blog/about/more_on_developing_naming_conventions_microformats_and_html5/" target="_blank" rel="external">More on developing naming conventions, Microformats and HTML5</a><em>   <a href="http://www.alistapart.com/articles/previewofhtml5" title="A early preview of HTML 5, Dec 2007" target="_blank" rel="external">A Preview of HTML 5</a> – Lachlan Hunt</em>   <a href="http://www.alistapart.com/articles/semanticsinhtml5" target="_blank" rel="external">Semantics in HTML 5</a> – John Allsopp<em>   <a href="http://jontangerine.com/log/2008/03/preparing-for-html5-with-semantic-class-names" target="_blank" rel="external">Preparing for HTML5 with Semantic Class Names</a></em>   <a href="http://www.w3schools.com/html5/html5_reference.asp" target="_blank" rel="external">HTML 5 Tag Reference</a> – W3C Shool<em>   <a href="http://validator.w3.org/" target="_blank" rel="external">HTML 5 Validator</a> – W3C</em>   <a href="http://www.smashingmagazine.com/2009/07/16/html5-and-the-future-of-the-web/" target="_blank" rel="external">HTML5 and the future of the Web</a></li>
+</ul>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Articles/">Articles</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Programming/">Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Web2-0/">Web2.0</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/legacy/html-5-inside-overview/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          &gt;HTML 5 Inside – Overview 总览
+        
+      </div>
+    </a>
+  
+  
+    <a href="/legacy/json/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&gt;JSON 简介&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Samuel Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/legacy/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/legacy/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/legacy/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/legacy/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

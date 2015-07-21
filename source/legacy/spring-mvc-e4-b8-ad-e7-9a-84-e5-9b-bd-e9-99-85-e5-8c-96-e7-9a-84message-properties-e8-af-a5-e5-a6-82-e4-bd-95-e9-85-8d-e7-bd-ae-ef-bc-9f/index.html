@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&gt;Spring MVC 中的国际化的message.properties该如何配置？ - Legacy - Explorer. Dream. Discover.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ResourceBundle [messages] not found for MessageSource: Can’t find bundle for base name messages, locale zh_CN。
+
+为了解决这个，我复制了一个message_zh_CN.properties，但是无论是放在message.properties相同的class目录下，还是放在class/i18">
+<meta property="og:type" content="article">
+<meta property="og:title" content=">Spring MVC 中的国际化的message.properties该如何配置？">
+<meta property="og:url" content="http://blog.samuelchen.net/legacy/spring-mvc-e4-b8-ad-e7-9a-84-e5-9b-bd-e9-99-85-e5-8c-96-e7-9a-84message-properties-e8-af-a5-e5-a6-82-e4-bd-95-e9-85-8d-e7-bd-ae-ef-bc-9f/index.html">
+<meta property="og:site_name" content="Legacy - Explorer. Dream. Discover.">
+<meta property="og:description" content="ResourceBundle [messages] not found for MessageSource: Can’t find bundle for base name messages, locale zh_CN。
+
+为了解决这个，我复制了一个message_zh_CN.properties，但是无论是放在message.properties相同的class目录下，还是放在class/i18">
+<meta property="og:image" content="http://samuel.cnblogs.com/aggbug/28297.html">
+<meta property="og:updated_time" content="2015-07-20T07:10:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=">Spring MVC 中的国际化的message.properties该如何配置？">
+<meta name="twitter:description" content="ResourceBundle [messages] not found for MessageSource: Can’t find bundle for base name messages, locale zh_CN。
+
+为了解决这个，我复制了一个message_zh_CN.properties，但是无论是放在message.properties相同的class目录下，还是放在class/i18">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/legacy/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/legacy//webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/legacy/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/legacy/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/legacy/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/legacy/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/legacy/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.samuelchen.net/legacy"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-spring-mvc-e4-b8-ad-e7-9a-84-e5-9b-bd-e9-99-85-e5-8c-96-e7-9a-84message-properties-e8-af-a5-e5-a6-82-e4-bd-95-e9-85-8d-e7-bd-ae-ef-bc-9f" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &gt;Spring MVC 中的国际化的message.properties该如何配置？
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/legacy/spring-mvc-e4-b8-ad-e7-9a-84-e5-9b-bd-e9-99-85-e5-8c-96-e7-9a-84message-properties-e8-af-a5-e5-a6-82-e4-bd-95-e9-85-8d-e7-bd-ae-ef-bc-9f/" class="article-date">
+  <time datetime="2004-07-28T23:23:00.000Z" itemprop="datePublished">2004-07-29</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/legacy/categories/未分类/">未分类</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>ResourceBundle [messages] not found for MessageSource: Can’t find bundle for base name messages, locale zh_CN。</p>
+</blockquote>
+<p>为了解决这个，我复制了一个message_zh_CN.properties，但是无论是放在message.properties相同的class目录下，还是放在class/i18n/ 下都仍然是这个警告。</p>
+<p>该如何解决呢？</p>
+<p>已解决，漏了s<br><span style="font-weight: bold;">message<span style="color: rgb(255, 0, 0);">s</span></span> is not <span style="font-weight: bold;">message</span>.<br>I’ve missed the letter ‘s’.  :(<img src="http://samuel.cnblogs.com/aggbug/28297.html" alt=""></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Config/">Config</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/legacy/jstl-e4-bd-bf-e7-94-a8-e6-9c-ac-e5-9c-b0-e5-8c-96-e8-b5-84-e6-ba-90-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          &gt;[JSTL] 使用本地化资源文件的方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/legacy/the-flow-of-mvc-in-spring-part-i-dispatcher-and-controller/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&gt;The Flow of MVC in Spring -- Part I -- Dispatcher and Controller&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Samuel Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/legacy/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/legacy/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/legacy/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/legacy/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

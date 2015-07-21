@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>&gt;网站自动备份 - Legacy - Explorer. Dream. Discover.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="根据howlym的自动备份数据库文章修改了一下，下面这个可以自动备份数据库和整个网站（前提当然是你的网站支持Shell了）
+
+
+增加了邮件内容提示（这里直接将脚本包含了，注释内容就是提示。也可以另用一个文件。）；
+增加了一个附件，是整个网站的打包；
+针对网站数据库默认是utf8来修改了dump 的编码，恢复的时候应使用相应的编码调整；
+修改模式为700，避免他人可以看到密码；
+备份存档。#!/bi">
+<meta property="og:type" content="article">
+<meta property="og:title" content=">网站自动备份">
+<meta property="og:url" content="http://blog.samuelchen.net/legacy/e7-bd-91-e7-ab-99-e8-87-aa-e5-8a-a8-e5-a4-87-e4-bb-bd/index.html">
+<meta property="og:site_name" content="Legacy - Explorer. Dream. Discover.">
+<meta property="og:description" content="根据howlym的自动备份数据库文章修改了一下，下面这个可以自动备份数据库和整个网站（前提当然是你的网站支持Shell了）
+
+
+增加了邮件内容提示（这里直接将脚本包含了，注释内容就是提示。也可以另用一个文件。）；
+增加了一个附件，是整个网站的打包；
+针对网站数据库默认是utf8来修改了dump 的编码，恢复的时候应使用相应的编码调整；
+修改模式为700，避免他人可以看到密码；
+备份存档。#!/bi">
+<meta property="og:updated_time" content="2015-07-20T07:10:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=">网站自动备份">
+<meta name="twitter:description" content="根据howlym的自动备份数据库文章修改了一下，下面这个可以自动备份数据库和整个网站（前提当然是你的网站支持Shell了）
+
+
+增加了邮件内容提示（这里直接将脚本包含了，注释内容就是提示。也可以另用一个文件。）；
+增加了一个附件，是整个网站的打包；
+针对网站数据库默认是utf8来修改了dump 的编码，恢复的时候应使用相应的编码调整；
+修改模式为700，避免他人可以看到密码；
+备份存档。#!/bi">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/legacy/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+  <link href="/legacy//webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/legacy/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo" href="/"></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/legacy/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/legacy/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/legacy/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/legacy/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.samuelchen.net/legacy"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-e7-bd-91-e7-ab-99-e8-87-aa-e5-8a-a8-e5-a4-87-e4-bb-bd" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &gt;网站自动备份
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/legacy/e7-bd-91-e7-ab-99-e8-87-aa-e5-8a-a8-e5-a4-87-e4-bb-bd/" class="article-date">
+  <time datetime="2006-03-21T07:39:00.000Z" itemprop="datePublished">2006-03-21</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/legacy/categories/未分类/">未分类</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>根据<a href="http://howlym.com/blog/2006-03-19-91/" target="_blank" rel="external">howlym的自动备份数据库文章</a>修改了一下，下面这个可以自动备份数据库和整个网站（前提当然是你的网站支持Shell了）</p>
+</blockquote>
+<ul>
+<li>增加了邮件内容提示（这里直接将脚本包含了，注释内容就是提示。也可以另用一个文件。）；</li>
+<li>增加了一个附件，是整个网站的打包；</li>
+<li>针对网站数据库默认是utf8来修改了dump 的编码，恢复的时候应使用相应的编码调整；</li>
+<li>修改模式为700，避免他人可以看到密码；</li>
+<li>备份存档。<br><div class="alt"><br><div class="syntax_hilite"><br><div class="code">#!/bin/bash<br>#<h1 id="To_restore_to_another_unicode_databaase_from_this_backup">To restore to another unicode databaase from this backup</h1><h1 id="Please_add_SET_NAMES_‘utf8’;_to_the_top_of_the_SQL_backup_file-">Please add SET NAMES ‘utf8’; to the top of the SQL backup file.</h1><h1 id="Tune_SET_CHARACTER_SET_XXX_=_‘XXX’;_yourself_pls-">Tune SET CHARACTER_SET_XXX = ‘XXX’; yourself pls.</h1>#<br>DATE=<code>date +%Y%m%d</code><br>HOST=db.samuelchen.net<br>USER=user<br>PASS=123456<br>DB=database<br>EMAIL=”email@yourhost.com”<br>DB_FILE=”$DB-$DATE”<br>SITE_FILE=”samuelchen-$DATE.tar.gz”<br>SITE_PATH=samuelchen.net/<br>TIL=”Explore.Dream.Discover.Database-Dump-AutoBackup”</div></div></div></li>
+</ul>
+<h1 id="clean_cache">clean cache</h1><p>rm /home/yourhome/blog/wp-content/cache/* -r &gt;/dev/null</p>
+<h1 id="dump_&amp;_pack_database">dump &amp; pack database</h1><p>mysqldump —default-character-set=utf8 —set-charset=utf8 —skip-opt -u$USER -p$PASS -h $HOST $DB &gt; $DB_FILE.sql<br>gzip $DB_FILE.sql -f</p>
+<h1 id="pack_whole_site">pack whole site</h1><p>tar zvcf $SITE_FILE $SITE_PATH &gt;/dev/null</p>
+<h1 id="send_email">send email</h1><p>mv $DB_FILE.sql.gz $DB_FILE.gz | mutt $EMAIL -s $TIL -a $DB_FILE.gz -a $SITE_FILE -i backup.sh</p>
+<h1 id="clean_&amp;_keep_archives">clean &amp; keep archives</h1><p>mv $DB_FILE.gz /home/yourhome/backup/<br>mv $SITE_FILE /home/yourhome/backup/<br><br><br>存成backup.sh后,运行</p>
+<p><em>$chmod 700 autobackup<br>$crontab -e</em></p>
+<p>在出现的界面中输入:</p>
+<p>0 0 <em> </em> * /home/yourhome/backup.sh</p>
+<p>路径请修改成你的文件路径</p>
+<p>(如果是nano)按ctrl+o 保存,请注意按回车确认,ctrl+x退出.</p>
+<p>这样每天晚上12点,你就可以在你的邮箱中收到系统打包好的数据库文件了。</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Database/">Database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Maintaining/">Maintaining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Programming/">Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/WordPress/">WordPress</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/legacy/web2-0-e7-bd-91-e7-ab-99-e4-bb-8b-e7-bb-8d1-big-com/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          &gt;Web2.0 网站介绍(1) - Big.com
+        
+      </div>
+    </a>
+  
+  
+    <a href="/legacy/eclipse-con-2006/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&gt;Eclipse Con 2006&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 Samuel Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/legacy/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/legacy/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/legacy/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/legacy/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
