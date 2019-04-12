@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>&gt;Mysql Bacup &amp; Restore - Legacy - Explorer. Dream. Discover.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Dreamhost 的mysql状态如下:  Server version:         5.0.18-standard-logProtocol version:       10Server characterset:    utf8Db     characterset:    utf8Client characterset:    utf8Conn.  characterset:">
+<meta name="keywords" content="Database,Maintaining">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&gt;Mysql Bacup &amp; Restore">
+<meta property="og:url" content="http://blog.samuelchen.net/legacy/mysql-bacup-restore/index.html">
+<meta property="og:site_name" content="Legacy - Explorer. Dream. Discover.">
+<meta property="og:description" content="Dreamhost 的mysql状态如下:  Server version:         5.0.18-standard-logProtocol version:       10Server characterset:    utf8Db     characterset:    utf8Client characterset:    utf8Conn.  characterset:">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-12T05:56:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&gt;Mysql Bacup &amp; Restore">
+<meta name="twitter:description" content="Dreamhost 的mysql状态如下:  Server version:         5.0.18-standard-logProtocol version:       10Server characterset:    utf8Db     characterset:    utf8Client characterset:    utf8Conn.  characterset:">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/legacy/legacy/webfonts/ptserif/main.css" rel="stylesheet" type="text/css">
+  <link href="/legacy/legacy/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/legacy/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo logo-text" href="/legacy/">Legacy Posts - Explore. Dream. Discover.</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/legacy/">Home</a>
+        
+          <a class="main-nav-link" href="/legacy/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/legacy/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/legacy/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/legacy/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.samuelchen.net/legacy"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-mysql-bacup-restore" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &gt;Mysql Bacup &amp; Restore
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/legacy/mysql-bacup-restore/" class="article-date">
+  <time datetime="2006-03-13T06:24:00.000Z" itemprop="datePublished">2006-03-13</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/legacy/categories/未分类/">未分类</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Dreamhost 的mysql状态如下:</p>
+</blockquote>
+<p>Server version:         5.0.18-standard-log<br>Protocol version:       10<br>Server characterset:    utf8<br>Db     characterset:    utf8<br>Client characterset:    utf8<br>Conn.  characterset:    utf8</p>
+<p>这样的编码在备份和恢复的时候会有问题，因此做了如下测试来保证其正确：</p>
+<p>1. 恢复到原数据库，恢复后编码不变，仍全是utf8。</p>
+<ul>
+<li>通过后台的worpress database backup 插件备份数据；</li>
+<li>创建新数据库，此时编码仍全是utf8；</li>
+<li>使用mysql&gt; . backup.sql 进行恢复，blog浏览显示正常，编码仍全是utf8；</li>
+<li>插入新数据，浏览正常；</li>
+<li><p>插入数据后再次备份，再次使用1、2、3恢复，正常。<br>2. 恢复到原数据库，恢复后编码变为server和database编码是utf8，client和conn编码是utf8。</p>
+</li>
+<li><p>通过后台的worpress database backup 插件备份数据；</p>
+</li>
+<li>创建新数据库，此时编码仍全是utf8；</li>
+<li>修改backup.sql，在前面增加<br>SET CHARACTER_SET_DATABASE = ‘utf8’;<br>SET CHARACTER_SET_SERVER = ‘utf8’;<br>两行；</li>
+<li>使用mysql&gt; . backup.sql 进行恢复，blog浏览显示正常，编码变为server和database编码是utf8，client和conn编码是utf8；</li>
+<li>插入新数据，浏览正常；</li>
+<li>插入数据后再次备份，再次使用1、2、3恢复，浏览正常。<br>3. 恢复到另外一个数据库（目的数据库是4.1.18-nt，window安装时选择了多语言，服务端默认utf8，状态如下）。</li>
+</ul>
+<p>Server version:         4.1.18-nt<br>Protocol version:       10<br>Server characterset:    utf8<br>Db     characterset:    utf8<br>Client characterset:    utf8<br>Conn.  characterset:    utf8</p>
+<ul>
+<li>通过 mysql&gt; mysqldump -u ID -p -h hostname.samuelchen.net –default-character-set=utf8<br>-set-charset=utf8 –skip-opt database_name&gt; backup.sql  备份数据；</li>
+<li>创建新数据库，server和database编码是utf8，client和conn编码是utf8；</li>
+<li>修改backup.sql，在最前面增加 SET NAMES ‘utf8’;</li>
+<li>使用mysql&gt; . backup.sql 进行恢复，blog浏览显示正常，编码变为server和database编码是utf8，client和conn编码是utf8；</li>
+<li>插入新数据，正常；</li>
+<li>插入数据后再次备份，再次恢复，正常。</li>
+<li>恢复到1,2所示的utf8数据库，无须修伽，正常。<br>— Samuel</li>
+</ul>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Database/">Database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Maintaining/">Maintaining</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/legacy/installed-some-plugins/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          &gt;Installed Some Plugins
+        
+      </div>
+    </a>
+  
+  
+    <a href="/legacy/e6-8b-9b-e5-95-86-e7-9a-84-e4-bf-9d-e9-99-a9-e9-98-b3-e8-b0-8b/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&gt;招商的保险阳谋&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Samuel Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/legacy/legacy/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/legacy/fancybox/jquery.fancybox.css">
+  <script src="/legacy/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/legacy/js/script.js"></script>
+  </div>
+</body>
+</html>

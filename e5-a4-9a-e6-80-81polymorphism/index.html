@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>&gt;多态(Polymorphism) - Legacy - Explorer. Dream. Discover.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="多态(Polymorphism)– 面向对象的典征，现代软件设计的基石_All rights reserved.Samuel Chen12.12.2004 first published on www.cnblogs.com/samuel此文在cnblogs上的讨论有很多值得学习和关注，点击这里查看。_ 前言如果让你选择一项面向对(Object Oriented，后文简称OO)象最重要的或者最">
+<meta name="keywords" content="Architect,Programming,Articles">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&gt;多态(Polymorphism)">
+<meta property="og:url" content="http://blog.samuelchen.net/legacy/e5-a4-9a-e6-80-81polymorphism/index.html">
+<meta property="og:site_name" content="Legacy - Explorer. Dream. Discover.">
+<meta property="og:description" content="多态(Polymorphism)– 面向对象的典征，现代软件设计的基石_All rights reserved.Samuel Chen12.12.2004 first published on www.cnblogs.com/samuel此文在cnblogs上的讨论有很多值得学习和关注，点击这里查看。_ 前言如果让你选择一项面向对(Object Oriented，后文简称OO)象最重要的或者最">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-12T05:56:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&gt;多态(Polymorphism)">
+<meta name="twitter:description" content="多态(Polymorphism)– 面向对象的典征，现代软件设计的基石_All rights reserved.Samuel Chen12.12.2004 first published on www.cnblogs.com/samuel此文在cnblogs上的讨论有很多值得学习和关注，点击这里查看。_ 前言如果让你选择一项面向对(Object Oriented，后文简称OO)象最重要的或者最">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/legacy/legacy/webfonts/ptserif/main.css" rel="stylesheet" type="text/css">
+  <link href="/legacy/legacy/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/legacy/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo logo-text" href="/legacy/">Legacy Posts - Explore. Dream. Discover.</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/legacy/">Home</a>
+        
+          <a class="main-nav-link" href="/legacy/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/legacy/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/legacy/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/legacy/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.samuelchen.net/legacy"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-e5-a4-9a-e6-80-81polymorphism" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &gt;多态(Polymorphism)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/legacy/e5-a4-9a-e6-80-81polymorphism/" class="article-date">
+  <time datetime="2004-12-12T04:13:00.000Z" itemprop="datePublished">2004-12-12</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/legacy/categories/未分类/">未分类</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+</blockquote>
+<h1 id="多态-Polymorphism"><a href="#多态-Polymorphism" class="headerlink" title="多态(Polymorphism)"></a>多态(Polymorphism)</h1><h3 id="–-面向对象的典征，现代软件设计的基石"><a href="#–-面向对象的典征，现代软件设计的基石" class="headerlink" title="– 面向对象的典征，现代软件设计的基石"></a>– 面向对象的典征，现代软件设计的基石</h3><p>_<span style="font-size:85%;">All rights reserved.<br>Samuel Chen<br>12.12.2004 first published on <a href="http://www.cnblogs.com/samuel" target="_blank" rel="noopener">www.cnblogs.com/samuel</a><br>此文在cnblogs上的讨论有很多值得学习和关注，<a href="http://www.cnblogs.com/Samuel/archive/2004/12/12/Polymorphism.html" target="_blank" rel="noopener">点击这里查看</a>。</span><br>_</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果让你选择一项面向对(Object Oriented，后文简称OO)象最重要的或者最能表现OO特点的技术特征，会是什么？</p>
+<p>封装(wrap)、继承(inheritance)、重载(override)还是多态(polymorphism)，亦或是其他？<br>在我看来，答案无疑将是多态。封装是优点，继承是基础，重载是特点，而多态则是特征。</p>
+<p>虽然这四者缺一不可，无论少了哪一个，就像一个人缺胳膊少腿，使OO将不再是完整的，但是前三者对于OO来说好比鼻子耳朵，而多态则是生殖器，没有多态的OO就象是被阉割的雄性，已经失去其典征。</p>
+<h2 id="什么是多态？"><a href="#什么是多态？" class="headerlink" title="什么是多态？"></a>什么是多态？</h2><p>简单来说，多态是具有表现多种形态的能力的特征，在OO中是指，语言具有根据对象的类型以不同方式处理之，特别是重载方法和继承类这种形式，的能力。多态被认为是面向对象语言的必备特性。</p>
+<p>多态有多种分类，通过了解这些分类可以更丰满对其认识，在这里就不再罗列，请各位参考 <a href="http://en.wikipedia.org/wiki/Polymorphism_(computer_science" target="_blank" rel="noopener">wiki大百科</a>) 和 <a href="http://www.javaworld.com/javaworld/javatips/jw-javatip30.html" target="_blank" rel="noopener">javaworld</a> .</p>
+<h2 id="多态与泛型-generic"><a href="#多态与泛型-generic" class="headerlink" title="多态与泛型(generic)"></a>多态与泛型(generic)</h2><p>多态在某种意义上来说与多态非常接近。<em>（原文是“多态实际上就是泛型。”，这句比较容易招骂，所以改了）</em></p>
+<p>所谓泛型就是指我们不为特定的类型进行专门编码，而采用对不同类型进行通用编码的方式，无论是数据结果还是算法。</p>
+<p>传统的泛型是指类似以Template function的方式使参数一般化，典型的应用是C++ STL，比如List、Vector以及algorithm。</p>
+<p>而OO已能通过接口(Interface)和抽象类(Abstract Class)进行真正意义上的泛型了。在我看来，这就是OO最精彩的地方，也就是多态的威力。而对于传统意义上的Generic，我始终觉得其作用已经今不如昔了。</p>
+<h2 id="多态和继承-Inheritance"><a href="#多态和继承-Inheritance" class="headerlink" title="多态和继承(Inheritance)"></a>多态和继承(Inheritance)</h2><p>严格来说，多态与继承、重载并不是孤立的，他们之间存在着紧密的联系，多态是建立在这两者的基础之上的（实际上继承就有用重载这一特性）。</p>
+<p>传统的多态实际上就是由虚函数(Virtual Function)利用虚表(Virtual Table)实现的（早期C模拟OO特性时使用最多，C++的实现也是，后来的技术未作研究，是否使用VT不得而知），自然是离不开继承，换句话说多态实际上覆盖了继承。</p>
+<p>正是由于继承与多态的紧密联系，使得我们很容易张冠李戴，那么如何区别呢？</p>
+<p>举个常用的例子：<br>`<br>Abstract Class Sharp implement IHaveSide {<br> public bool isSharp(){<br>  return true;<br> } </p>
+<p> public abstract int getSides();<br>} </p>
+<p>Class Triangle extends Sharp {<br> public override int getSides() {<br>  return 3;<br> }<br>} </p>
+<p>Class Rectangle extends Sharp {<br> pubilc override int getSides() {<br>  return 4;<br> }<br>}<br>`<br>那么这种类的关系叫做继承，下面这种使用方式也是继承所带来的：</p>
+<p><code50><br>Triangel tri = new Triangle();<br>println(“Triangle is a type of sharp? “ + tri.isSharp());<br></code50><br>而这种方式则是多态：</p>
+<p><code50><br>Sharp sharp = new Rectangle();<br>println(“My sharp has “ + sharp.getSides() + “ sides.”);<br></code50><br>这两者区别在哪？很显然，继承是子类使用父类的方法，而多态则是父类使用子类的方法。</p>
+<p>其技术上的区别是绑定时期，晚期绑定一定是多态。</p>
+<p>这里介绍区别并不是想说茴字有几种写法，而是只有清楚的认识到技术的显著特点后才能更好的使用它。</p>
+<h2 id="现代软件设计"><a href="#现代软件设计" class="headerlink" title="现代软件设计"></a>现代软件设计</h2><p>现代软件大量的使用框架、模式(非特指Deisgn Pattern)，也就是将软件开发的一些共性进行抽象，提出普遍适用的软件结构。</p>
+<p>无论是框架还是模式，他们都有一些明显的共同点 — 使用xml配置对象，大量使用接口采用所谓面向接口的方法，利用反射实现。</p>
+<p>为什么要接口？因为需要抽象，需要将未知的对象在已有的框架中表现。</p>
+<p>如何实现接口？多态！所谓反射，实际上就是一种晚期绑定的技术，这个技术实质上表现出来的就是多态这一特征。</p>
+<p>面向方面开发(Aspect Oriented Programming)是一个热点，也是现代软件发展的趋势。定制、组件装配的软件开发方式在应用越来越复杂、需求变化越来越快的今天显得日趋重要。那么如何才能使今天的软件能够适应明天需要呢？如何使我开发速度更快？如何能更容易的修改应用？AOP则是解决这些问题的有效手段。</p>
+<p>让我们看看框架容器的主要模式，Inversion of Control Containers(IoC)/Dependency Injection(包括setter injection, construct injection, interface injection等)，其主要好处就是类之间的依赖，通过运行期的查找来进行绑定。那么他的基础是什么呢？还是多态！</p>
+<p>我们可以看到，在现代软件的开发中，无数的思想象火花一样跳动。其中一类很重要的思想就是建立在多态这样一个很基本的特性，甚至可以说是一个语言概念之上的。在这里希望通过这篇文章抛砖引玉，引起更多的对与当今软件发展发向的思考，同时探究其根源。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>行文简陋，错漏在所难免，愿与诸位探讨</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.blogger.com/" target="_blank" rel="noopener">wiki大百科 http://en.wikipedia.org/wiki/Polymorphism_(computer_science)</a><br><a href="http://www.blogger.com/" target="_blank" rel="noopener">java世界 http://www.javaworld.com/javaworld/javatips/jw-javatip30.html</a><br><a href="http://www.blogger.com/" target="_blank" rel="noopener">Matin Fowler http://www.martinfowler.com/ </a></p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Architect/">Architect</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Articles/">Articles</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Programming/">Programming</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/legacy/google-suggest/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          &gt;Google Suggest
+        
+      </div>
+    </a>
+  
+  
+    <a href="/legacy/qq-e4-b8-8a-e6-9c-80-e7-89-9b-e7-9a-84-e7-a6-bb-e7-ba-bf-e7-95-99-e8-a8-80-e6-b6-88-e6-81-af/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&gt;QQ上最牛的离线留言消息&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Samuel Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/legacy/legacy/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/legacy/fancybox/jquery.fancybox.css">
+  <script src="/legacy/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/legacy/js/script.js"></script>
+  </div>
+</body>
+</html>

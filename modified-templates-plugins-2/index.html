@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>&gt;Modified Templates &amp; Plugins - Legacy - Explorer. Dream. Discover.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="改了太多的地方，比如为iG_Syntax_Hilite插件显示的代码加上底色，修改meta顺序，文字等，就不再一一写了。总之得记住备份wp-content/。  修改了模版，使用： [php] &amp;lt; ?php // random display adsif(function_exists(‘adsense_deluxe_ads’)) {__(“ “);srand((double)microt">
+<meta name="keywords" content="Maintaining,WordPress">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&gt;Modified Templates &amp; Plugins">
+<meta property="og:url" content="http://blog.samuelchen.net/legacy/modified-templates-plugins-2/index.html">
+<meta property="og:site_name" content="Legacy - Explorer. Dream. Discover.">
+<meta property="og:description" content="改了太多的地方，比如为iG_Syntax_Hilite插件显示的代码加上底色，修改meta顺序，文字等，就不再一一写了。总之得记住备份wp-content/。  修改了模版，使用： [php] &amp;lt; ?php // random display adsif(function_exists(‘adsense_deluxe_ads’)) {__(“ “);srand((double)microt">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-12T05:56:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&gt;Modified Templates &amp; Plugins">
+<meta name="twitter:description" content="改了太多的地方，比如为iG_Syntax_Hilite插件显示的代码加上底色，修改meta顺序，文字等，就不再一一写了。总之得记住备份wp-content/。  修改了模版，使用： [php] &amp;lt; ?php // random display adsif(function_exists(‘adsense_deluxe_ads’)) {__(“ “);srand((double)microt">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/legacy/legacy/webfonts/ptserif/main.css" rel="stylesheet" type="text/css">
+  <link href="/legacy/legacy/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/legacy/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo logo-text" href="/legacy/">Legacy Posts - Explore. Dream. Discover.</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/legacy/">Home</a>
+        
+          <a class="main-nav-link" href="/legacy/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/legacy/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/legacy/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/legacy/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.samuelchen.net/legacy"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-modified-templates-plugins-2" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &gt;Modified Templates &amp; Plugins
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/legacy/modified-templates-plugins-2/" class="article-date">
+  <time datetime="2006-03-17T05:07:00.000Z" itemprop="datePublished">2006-03-17</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/legacy/categories/未分类/">未分类</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>改了太多的地方，比如为iG_Syntax_Hilite插件显示的代码加上底色，修改meta顺序，文字等，就不再一一写了。总之得记住备份wp-content/。</p>
+</blockquote>
+<p>修改了模版，使用：</p>
+<p>[php]</p>
+<p>&lt; ?php // random display ads<br>if(function_exists(‘adsense_deluxe_ads’)) {<br>__(“</p>
+<p></p><p align="center">“);<br>srand((double)microtime()*1000000);<br>$switcher = rand(0, 6);<br>switch ($switcher) {<br>case 0:<br>adsense_deluxe_ads(‘comment_link’);<br>break;<br>case 1:<br>case 2:<br>adsense_deluxe_ads(‘recommend’);<br>break;<br>case 3:<br>adsense_deluxe_ads(‘recommend_adsense’);<br>break;<br>default:<br>adsense_deluxe_ads(‘comment’);<br>}<br>__(“</p>
+<p>“);<br>}?&gt;<br>[/php]</p>
+<p>的形式来随机显示google adsense广告，避免出现太多。</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Maintaining/">Maintaining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/WordPress/">WordPress</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/legacy/e4-b8-ad-e5-9b-bd-e5-a8-81-e8-83-81-e8-ae-ba-e5-a5-bd-e5-83-8f-e8-bf-98-e6-8c-ba-e4-b8-a5-e9-87-8d-e7-9a-84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          &gt;中国威胁论好像还挺严重的
+        
+      </div>
+    </a>
+  
+  
+    <a href="/legacy/e7-94-9f-e6-b4-bb-e6-94-b9-e5-8f-98-e4-bd-a0-ef-bc-8c-e8-bf-98-e6-98-af-e4-bd-a0-e6-94-b9-e5-8f-98-e7-94-9f-e6-b4-bb-ef-bc-88-e7-9a-84-e5-a3-ab-e5-8f-b8-e6-9c-ba-e4-b8-80-e5-a0-82-e7-94-9f-e5-8a-a8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&gt;生活改变你，还是你改变生活（的士司机一堂生动的MBA课程）&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Samuel Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/legacy/legacy/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/legacy/fancybox/jquery.fancybox.css">
+  <script src="/legacy/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/legacy/js/script.js"></script>
+  </div>
+</body>
+</html>

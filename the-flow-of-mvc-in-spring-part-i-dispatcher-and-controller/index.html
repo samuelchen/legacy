@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>&gt;The Flow of MVC in Spring -- Part I -- Dispatcher and Controller - Legacy - Explorer. Dream. Discover.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="From the example on spring official site, I conclude the flow of Spring’s MVC.  1. Request –&amp;gt; org.springframework.web.servlet.DispatcherServlet –&amp;gt; parse [ServletName]-servlet.xml –&amp;gt; dispatch">
+<meta name="keywords" content="Programming,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&gt;The Flow of MVC in Spring -- Part I -- Dispatcher and Controller">
+<meta property="og:url" content="http://blog.samuelchen.net/legacy/the-flow-of-mvc-in-spring-part-i-dispatcher-and-controller/index.html">
+<meta property="og:site_name" content="Legacy - Explorer. Dream. Discover.">
+<meta property="og:description" content="From the example on spring official site, I conclude the flow of Spring’s MVC.  1. Request –&amp;gt; org.springframework.web.servlet.DispatcherServlet –&amp;gt; parse [ServletName]-servlet.xml –&amp;gt; dispatch">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-12T05:56:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&gt;The Flow of MVC in Spring -- Part I -- Dispatcher and Controller">
+<meta name="twitter:description" content="From the example on spring official site, I conclude the flow of Spring’s MVC.  1. Request –&amp;gt; org.springframework.web.servlet.DispatcherServlet –&amp;gt; parse [ServletName]-servlet.xml –&amp;gt; dispatch">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/legacy/legacy/webfonts/ptserif/main.css" rel="stylesheet" type="text/css">
+  <link href="/legacy/legacy/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/legacy/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo logo-text" href="/legacy/">Legacy Posts - Explore. Dream. Discover.</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/legacy/">Home</a>
+        
+          <a class="main-nav-link" href="/legacy/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/legacy/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/legacy/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/legacy/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.samuelchen.net/legacy"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-the-flow-of-mvc-in-spring-part-i-dispatcher-and-controller" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &gt;The Flow of MVC in Spring -- Part I -- Dispatcher and Controller
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/legacy/the-flow-of-mvc-in-spring-part-i-dispatcher-and-controller/" class="article-date">
+  <time datetime="2004-07-28T01:15:00.000Z" itemprop="datePublished">2004-07-28</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/legacy/categories/未分类/">未分类</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>From the example on spring official site, I conclude the flow of Spring’s MVC.</p>
+</blockquote>
+<p>1. Request –&gt; org.springframework.web.servlet.<strong>DispatcherServlet</strong> –&gt; parse <strong>[ServletName]-servlet.xml</strong> –&gt; dispatch to Controller<br>   The “Request” is the “url-patten” mapped in <strong>web.xml</strong> of web application.<br>   [ServletName] is the name DispatcherServlet mapped (you can also extend it).</p>
+<p>2.  Create your own Controller “MyController“ –&gt; implement Interface org.springframework.mvc.<strong>Controller </strong> –&gt; write code of  controlling in method <strong>handleRequest()</strong> which inherited from “Controller” –&gt;  return the created model and view obejcts of org.springframework.mvc.<strong>ModelAndView</strong> –&gt; the framework will render it automatically<br>   The constructor of ModelAndView takes 1 or 3 parameter(s).</p>
+<p>   For 3 parameters, first one is the view <strong>path</strong> (The truth path or resolved path. The resolved path is resolved by org.springframework.web.sevrlet.view.InternalResourceViewResolver. I will explain it when I post the next time.).<br>   The second one is the model object’s given name, it’s String. This name is NOT the object’s variant-name. This name will be used in jsp. You can look it as an <strong>alias</strong>.<br>   The third one is the model object ( just the variant you will pass to jsp view ).</p>
+<p>3. Ok, Use the returned model <strong>object </strong>in jsp.</p>
+<p>I am an beginner of Java, so i can not conclude if the flow is the common MVC flow.</p>
+<p>to be continue …</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Programming/">Programming</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/legacy/spring-mvc-e4-b8-ad-e7-9a-84-e5-9b-bd-e9-99-85-e5-8c-96-e7-9a-84message-properties-e8-af-a5-e5-a6-82-e4-bd-95-e9-85-8d-e7-bd-ae-ef-bc-9f/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          &gt;Spring MVC 中的国际化的message.properties该如何配置？
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Samuel Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/legacy/legacy/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/legacy/fancybox/jquery.fancybox.css">
+  <script src="/legacy/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/legacy/js/script.js"></script>
+  </div>
+</body>
+</html>

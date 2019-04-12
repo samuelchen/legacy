@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>&gt;[JSTL] 使用本地化资源文件的方法 - Legacy - Explorer. Dream. Discover.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="以basename是messages的为例。  内容如下的utf-8的中文化文件messages_zh_CN.properties.src： name=张三sex=男city=北京menu_return=返回主菜单 第一步，先确定原文件是GB/GBK编码的（很重要），如果是utf-8的先要转成GB/GBK的； 第二步，用$JDK/bin/native2ascii.exe进行转换&amp;gt; c:pa">
+<meta name="keywords" content="Java,Config">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&gt;[JSTL] 使用本地化资源文件的方法">
+<meta property="og:url" content="http://blog.samuelchen.net/legacy/jstl-e4-bd-bf-e7-94-a8-e6-9c-ac-e5-9c-b0-e5-8c-96-e8-b5-84-e6-ba-90-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/index.html">
+<meta property="og:site_name" content="Legacy - Explorer. Dream. Discover.">
+<meta property="og:description" content="以basename是messages的为例。  内容如下的utf-8的中文化文件messages_zh_CN.properties.src： name=张三sex=男city=北京menu_return=返回主菜单 第一步，先确定原文件是GB/GBK编码的（很重要），如果是utf-8的先要转成GB/GBK的； 第二步，用$JDK/bin/native2ascii.exe进行转换&amp;gt; c:pa">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-12T05:56:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&gt;[JSTL] 使用本地化资源文件的方法">
+<meta name="twitter:description" content="以basename是messages的为例。  内容如下的utf-8的中文化文件messages_zh_CN.properties.src： name=张三sex=男city=北京menu_return=返回主菜单 第一步，先确定原文件是GB/GBK编码的（很重要），如果是utf-8的先要转成GB/GBK的； 第二步，用$JDK/bin/native2ascii.exe进行转换&amp;gt; c:pa">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="/legacy/legacy/webfonts/ptserif/main.css" rel="stylesheet" type="text/css">
+  <link href="/legacy/legacy/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/legacy/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <a id="logo" class="logo logo-text" href="/legacy/">Legacy Posts - Explore. Dream. Discover.</a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/legacy/">Home</a>
+        
+          <a class="main-nav-link" href="/legacy/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/legacy/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/legacy/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/legacy/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.samuelchen.net/legacy"></form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+    <section id="main" class="outer"><article id="post-jstl-e4-bd-bf-e7-94-a8-e6-9c-ac-e5-9c-b0-e5-8c-96-e8-b5-84-e6-ba-90-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      &gt;[JSTL] 使用本地化资源文件的方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/legacy/jstl-e4-bd-bf-e7-94-a8-e6-9c-ac-e5-9c-b0-e5-8c-96-e8-b5-84-e6-ba-90-e6-96-87-e4-bb-b6-e7-9a-84-e6-96-b9-e6-b3-95/" class="article-date">
+  <time datetime="2004-09-01T01:52:00.000Z" itemprop="datePublished">2004-09-01</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/legacy/categories/未分类/">未分类</a>
+  </div>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>以basename是messages的为例。</p>
+</blockquote>
+<p>内容如下的utf-8的中文化文件messages_zh_CN.properties.src：</p>
+<p>name=张三<br>sex=男<br>city=北京<br>menu_return=返回主菜单</p>
+<p><span style="color: rgb(255, 0, 0);">第一步，先确定原文件是GB/GBK编码的（很重要），如果是utf-8的先要转成GB/GBK的；</span></p>
+<p>第二步，用$JDK/bin/native2ascii.exe进行转换<br>&gt; c:path&gt;native2ascii messages_zh_CN.properties.src &gt;</p>
+<blockquote>
+<p>messages_zh_CN.properties<br>实际产生的输出如下:</p>
+</blockquote>
+<blockquote>
+<p>name=u5f20u4e09<br>sex=u7537<br>city=u5317u4eac<br>menu_return=u8fd4u56deu4e3bu83dcu5355</p>
+</blockquote>
+<p>由于重定向到文件，所以看不到输出。</p>
+<p>以上内容就是你的本地化的资源文件messages_zh_CN.properties的内容。</p>
+<p><span style="color: rgb(255, 0, 0);font-size:85%;">_注意：.properties文件末尾需要一个空行才能被native2ascii正确转换。</span></p>
+<p>_</p>
+
+      
+    </div>
+  
+    <footer class="article-footer">
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Config/">Config</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/legacy/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/legacy/e6-91-98-e5-bd-95java-e5-a6-82-e4-bd-95-e4-bd-bf-e7-94-a8-e7-9b-b8-e5-af-b9-e8-b7-af-e5-be-84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <div class="article-nav-title"><span>&lt;</span>&nbsp;
+        
+          &gt;[摘录]JAVA如何使用相对路径
+        
+      </div>
+    </a>
+  
+  
+    <a href="/legacy/spring-mvc-e4-b8-ad-e7-9a-84-e5-9b-bd-e9-99-85-e5-8c-96-e7-9a-84message-properties-e8-af-a5-e5-a6-82-e4-bd-95-e9-85-8d-e7-bd-ae-ef-bc-9f/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&gt;Spring MVC 中的国际化的message.properties该如何配置？&nbsp;<span>&gt;</span></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Samuel Chen&nbsp;
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script src="/legacy/legacy/js/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/legacy/fancybox/jquery.fancybox.css">
+  <script src="/legacy/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/legacy/js/script.js"></script>
+  </div>
+</body>
+</html>
